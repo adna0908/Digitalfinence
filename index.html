@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="report.html">Report</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <h2>Digital Finance Tracker</h2>
+
+    <input type="text" id="desc" placeholder="Description">
+    <input type="number" id="amount" placeholder="Amount">
+
+    <select id="type">
+        <option value="">Select Type</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+    </select>
+
+    <button id="addBtn">Add Transaction</button>
+    <button id="clearBtn">Delete Result</button>
+
+    <p id="message"></p>
+
+    <h3>Summary</h3>
+    <p>Income: <span id="income">$0</span></p>
+    <p>Expense: <span id="expense">$0</span></p>
+    <p>Balance: <span id="balance">$0</span></p>
+
+    <ul id="list"></ul>
+</div>
+
+<script src="digital-finance.js"></script>
+</body>
+</html>
