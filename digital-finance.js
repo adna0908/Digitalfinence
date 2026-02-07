@@ -79,3 +79,36 @@ function updateDashboard() {
     if (expenseEl) expenseEl.textContent = `$${expense}`;
     if (balanceEl) balanceEl.textContent = `$${income - expense}`;
 }
+
+/* ===============================
+       CONTACT BUTTON FUNCTION
+================================*/
+const sendBtn = document.getElementById("sendBtn");
+if (sendBtn) {
+    sendBtn.addEventListener("click", () => {
+        const contactName = document.getElementById("contactName").value.trim();
+        const contactEmail = document.getElementById("contactEmail").value.trim();
+        const contactMsg = document.getElementById("contactMessage").value.trim();
+        const contactInfo = document.getElementById("contactInfo");
+
+        if (!contactName || !contactEmail || !contactMsg) {
+            contactInfo.textContent = "❌ Please fill all fields!";
+            contactInfo.style.color = "red";
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(contactEmail)) {
+            contactInfo.textContent = "❌ Please enter a valid email!";
+            contactInfo.style.color = "red";
+            return;
+        }
+
+        contactInfo.textContent = "✅ Message waa la diray!";
+        contactInfo.style.color = "green";
+
+        document.getElementById("contactName").value = "";
+        document.getElementById("contactEmail").value = "";
+        document.getElementById("contactMessage").value = "";
+    });
+}
