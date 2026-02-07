@@ -16,11 +16,21 @@
 <div class="container">
     <h2>Contact Us</h2>
 
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <button>Send</button>
+    <input type="text" id="contactName" placeholder="Your Name">
+    <input type="email" id="contactEmail" placeholder="Your Email">
+    <textarea id="contactMessage" placeholder="Your Message"></textarea>
+
+    <button id="sendBtn">Send</button>
+
+    <p id="contactInfo"></p>
 </div>
 
-</body>
-</html>
+<script>
+const sendBtn = document.getElementById("sendBtn");
+
+if (sendBtn) {
+    sendBtn.addEventListener("click", () => {
+        const name = document.getElementById("contactName").value.trim();
+        const email = document.getElementById("contactEmail").value.trim();
+        const message = document.getElementById("contactMessage").value.trim();
+        const info = document.getElementById("contactInfo");
